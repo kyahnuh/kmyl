@@ -1,20 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Valentine 💖</title>
+<title>💖 Valentine</title>
 
 <style>
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background: #fff5f7;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
 }
 
+/* COMMON */
+.page {
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.page.active {
+    display: flex;
+}
+
+/* PAGE 1 */
+.cover {
+    text-align: center;
+}
+
+.cover img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.cover button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff6f91;
+    color: white;
+    cursor: pointer;
+}
+
+/* PAGE 2 */
 .card {
     background: white;
     padding: 30px;
@@ -22,8 +59,8 @@ body {
     width: 360px;
     max-height: 90vh;
     overflow-y: auto;
-    text-align: center;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
 h1 {
@@ -70,57 +107,74 @@ button {
 
 <body>
 
-<div class="card">
-    <h1>Hi, my sweet bebi 💕</h1>
-
-    <p>Surprise! You don't know how to ask me so I'll just do it for you. :P</p>
-
-    <div class="message">
-        <p>
-            First off, I want to say sorry for the way I acted last night.
-            I was high on emotions and like you always say, my emotions are
-            clouding my judgement. I'm truly sorry because I was having mixed emotions.
-        </p>
-
-        <p>
-            At first, I was really really okay with you going home and that's
-            what I preferred but after some time I realized I wanted you to stay.
-            I couldn't decide and you also couldn't, and you forced me to make
-            the decision I was not sure about.
-        </p>
-
-        <p>
-            All that put aside, I want you to know that I appreciate you so much —
-            for considering me in everything that you do, for your patience,
-            and for adjusting everything just to cater to my needs.
-        </p>
-
-        <p>
-            I love you so much and I'm really sorry for the things I say when I'm
-            upset or mad. I hope you never get tired of me and I'll try to control
-            my emotions more.
-        </p>
-
-        <p>
-            I also want you to feel that I love you so much and I'm willing
-            to adjust for you.
-        </p>
+<!-- PAGE 1 -->
+<div class="page cover active" id="page1">
+    <div>
+        <img src="cover.png" alt="Valentine Cover">
+        <br>
+        <button onclick="openLetter()">Open this 💌</button>
     </div>
+</div>
 
-    <p class="question">
-        Will you be my date on <strong>February 14</strong>? 😉🌹
-    </p>
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+    <div class="card">
+        <h1>Hi, my sweet bebi 💕</h1>
 
-    <button class="yes" onclick="sayYes()">YES 💘</button>
-    <button id="noBtn">No 🙃</button>
+        <p>Surprise! You don't know how to ask me so I'll just do it for you. :P</p>
 
-    <p id="response"></p>
+        <div class="message">
+            <p>
+                First off, I want to say sorry for the way I acted last night.
+                I was high on emotions and like you always say, my emotions are
+                clouding my judgement. I'm truly sorry because I was having mixed emotions.
+            </p>
+
+            <p>
+                At first, I was really really okay with you going home and that's
+                what I preferred but after some time I realized I wanted you to stay.
+                I couldn't decide and you also couldn't, and you forced me to make
+                the decision I was not sure about.
+            </p>
+
+            <p>
+                All that put aside, I want you to know that I appreciate you so much —
+                for considering me in everything that you do, for your patience,
+                and for adjusting everything just to cater to my needs.
+            </p>
+
+            <p>
+                I love you so much and I'm really sorry for the things I say when
+                I'm upset or mad. I hope you never get tired of me and I'll try
+                to control my emotions more.
+            </p>
+
+            <p>
+                I also want you to feel that I love you so much and I'm willing
+                to adjust for you.
+            </p>
+        </div>
+
+        <p class="question">
+            Will you be my date on <strong>February 14</strong>? 😉🌹
+        </p>
+
+        <button class="yes" onclick="sayYes()">YES 💘</button>
+        <button id="noBtn">No 🙃</button>
+
+        <p id="response"></p>
+    </div>
 </div>
 
 <script>
+function openLetter() {
+    document.getElementById("page1").classList.remove("active");
+    document.getElementById("page2").classList.add("active");
+}
+
 const noBtn = document.getElementById("noBtn");
 
-noBtn.addEventListener("mouseover", function () {
+noBtn.addEventListener("mouseover", () => {
     noBtn.style.left = Math.random() * 200 - 100 + "px";
     noBtn.style.top  = Math.random() * 200 - 100 + "px";
 });
