@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>💖 Valentine?</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            width: 320px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #ff4d6d;
+        }
+
+        .question {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        button:first-child {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #ddd;
+        }
+
+        #response {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #ff4d6d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Hi Love 💕</h1>
+        <p>I wrote this code with only one purpose…</p>
+
+        <p class="question">
+            Will you be my Valentine? 🌹
+        </p>
+
+        <button onclick="sayYes()">YES 💘</button>
+        <button id="noBtn">No 🙃</button>
+
+        <p id="response"></p>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+        const response = document.getElementById("response");
+
+        noBtn.addEventListener("mouseover", () => {
+            const x = Math.random() * 200 - 100;
+            const y = Math.random() * 200 - 100;
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        function sayYes() {
+            response.innerHTML = "YAY! 💖 I can’t wait to spend Valentine’s Day with you 🥰";
+        }
+    </script>
+</body>
+</html>
