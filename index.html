@@ -1,92 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>💖 Valentine?</title>
+<div class="card">
+    <h1>Hi, my sweet bebi 💕</h1>
 
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-        }
+    <p>
+        Surprise! You don't know how to ask me so I'll just do it for you. :P
+    </p>
 
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            width: 320px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
+    <p style="text-align: left; font-size: 0.95em;">
+        First off, I want to say sorry for the way I acted last night.
+        I was high on emotions and like you always say, my emotions are
+        clouding my judgement. I'm truly sorry because I was having mixed
+        emotions.
+        <br><br>
+        At first, I was really really okay with you going home and that's
+        what I preferred but after some time I realized I wanted you to
+        stay. I couldn't decide and you also couldn't, and you forced me
+        to make the decision I was not sure about.
+        <br><br>
+        All that put aside, I want you to know that I appreciate you so
+        much — for considering me in everything that you do, for your
+        patience, and for adjusting everything just to cater to my needs.
+        <br><br>
+        I love you so much and I'm really sorry for the things I say when
+        I'm upset or mad. I hope you never get tired of me and I'll try
+        to control my emotions more.
+        <br><br>
+        I also want you to feel that I love you so much and I'm willing
+        to adjust for you.
+    </p>
 
-        h1 {
-            color: #ff4d6d;
-        }
+    <p class="question">
+        Now… <br>
+        Will you be my date on <strong>February 14</strong>? 😉🌹
+    </p>
 
-        .question {
-            font-size: 1.2em;
-            margin: 20px 0;
-        }
+    <button onclick="sayYes()">YES 💘</button>
+    <button id="noBtn">No 🙃</button>
 
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1em;
-            cursor: pointer;
-        }
-
-        button:first-child {
-            background-color: #ff4d6d;
-            color: white;
-        }
-
-        #noBtn {
-            background-color: #ddd;
-        }
-
-        #response {
-            margin-top: 20px;
-            font-weight: bold;
-            color: #ff4d6d;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="card">
-        <h1>Hi Love 💕</h1>
-        <p>I wrote this code with only one purpose…</p>
-
-        <p class="question">
-            Will you be my Valentine? 🌹
-        </p>
-
-        <button onclick="sayYes()">YES 💘</button>
-        <button id="noBtn">No 🙃</button>
-
-        <p id="response"></p>
-    </div>
-
-    <script>
-        const noBtn = document.getElementById("noBtn");
-        const response = document.getElementById("response");
-
-        noBtn.addEventListener("mouseover", () => {
-            const x = Math.random() * 200 - 100;
-            const y = Math.random() * 200 - 100;
-            noBtn.style.transform = `translate(${x}px, ${y}px)`;
-        });
-
-        function sayYes() {
-            response.innerHTML = "YAY! 💖 I can’t wait to spend Valentine’s Day with you 🥰";
-        }
-    </script>
-</body>
-</html>
+    <p id="response"></p>
+</div>
