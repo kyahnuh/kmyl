@@ -28,61 +28,71 @@ body {
     display: flex;
 }
 
-/* PAGE 1 */
+/* PAGE 1 — COVER */
 .cover {
     text-align: center;
 }
 
 .cover img {
-    max-width: 90%;
-    max-height: 80vh;
+    max-width: 90vw;
+    max-height: 70vh;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .cover button {
     margin-top: 20px;
-    padding: 12px 24px;
+    padding: 14px 28px;
     font-size: 1.1em;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     background-color: #ff6f91;
     color: white;
     cursor: pointer;
 }
 
-/* PAGE 2 */
+/* PAGE 2 — LANDSCAPE CARD */
 .card {
     background: white;
     padding: 30px;
-    border-radius: 15px;
-    width: 360px;
-    max-height: 90vh;
-    overflow-y: auto;
+    border-radius: 18px;
+    width: 85vw;
+    max-width: 1000px;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    text-align: center;
 }
 
 h1 {
     color: #ff4d6d;
+    margin-top: 0;
 }
 
 .message {
     text-align: left;
     font-size: 0.95em;
-    line-height: 1.5;
+    line-height: 1.6;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 12px;
 }
 
 .question {
-    margin-top: 20px;
+    margin: 20px 0 10px;
     font-weight: bold;
+    text-align: center;
+}
+
+.buttons {
+    text-align: center;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 10px 22px;
     margin: 8px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1em;
     cursor: pointer;
 }
@@ -98,7 +108,8 @@ button {
 }
 
 #response {
-    margin-top: 15px;
+    margin-top: 10px;
+    text-align: center;
     color: #ff4d6d;
     font-weight: bold;
 }
@@ -159,8 +170,10 @@ button {
             Will you be my date on <strong>February 14</strong>? 😉🌹
         </p>
 
-        <button class="yes" onclick="sayYes()">YES 💘</button>
-        <button id="noBtn">No 🙃</button>
+        <div class="buttons">
+            <button class="yes" onclick="sayYes()">YES 💘</button>
+            <button id="noBtn">No 🙃</button>
+        </div>
 
         <p id="response"></p>
     </div>
@@ -182,8 +195,3 @@ noBtn.addEventListener("mouseover", () => {
 function sayYes() {
     document.getElementById("response").innerText =
         "Hehe 💖 I knew it. See you on February 14, my love 🥰";
-}
-</script>
-
-</body>
-</html>
