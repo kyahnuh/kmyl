@@ -116,11 +116,19 @@ button {
     position: relative;
 }
 
+/* YES RESPONSE */
 #response {
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
     color: #ff4d6d;
+}
+
+#yesGif {
+    display: none;
+    margin: 15px auto 0;
+    max-width: 260px;
+    border-radius: 12px;
 }
 </style>
 </head>
@@ -187,6 +195,7 @@ button {
         </div>
 
         <p id="response"></p>
+        <img id="yesGif" src="deadpool.gif" alt="Deadpool GIF">
     </div>
 </div>
 
@@ -197,6 +206,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const page2 = document.getElementById("page2");
     const noBtn = document.getElementById("noBtn");
     const response = document.getElementById("response");
+    const yesBtn = document.getElementById("yesBtn");
+    const yesGif = document.getElementById("yesGif");
 
     openBtn.addEventListener("click", () => {
         page1.classList.remove("active");
@@ -208,9 +219,9 @@ document.addEventListener("DOMContentLoaded", () => {
         noBtn.style.top  = Math.random() * 200 - 100 + "px";
     });
 
-    document.getElementById("yesBtn").addEventListener("click", () => {
-        response.textContent =
-            "I mean... duhhh ako na 'to??? 🥰";
+    yesBtn.addEventListener("click", () => {
+        response.textContent = "I mean... duhhh ako na 'to??? 🥰";
+        yesGif.style.display = "block";
     });
 });
 </script>
