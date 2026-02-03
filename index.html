@@ -11,20 +11,21 @@
 
 body {
     margin: 0;
-    min-height: 100vh;
+    height: 100vh;
     background: #fff5f7;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
     touch-action: manipulation;
+    overflow: hidden; /* 🚫 no page scroll */
 }
 
 /* COMMON */
 .page {
     display: none;
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     justify-content: center;
     align-items: center;
 }
@@ -59,38 +60,37 @@ body {
     z-index: 10;
 }
 
-/* PAGE 2 — CARD */
+/* PAGE 2 — CARD (NO SCROLL) */
 .card {
     background: white;
-    padding: 30px;
+    padding: 24px 30px;
     border-radius: 18px;
     width: 85vw;
     max-width: 1000px;
-    height: 70vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 h1 {
     color: #ff4d6d;
     text-align: center;
-    margin-top: 0;
+    margin: 0;
 }
 
 .message {
-    flex: 1;
-    overflow-y: auto;
     text-align: left;
-    font-size: 0.95em;
-    line-height: 1.6;
-    padding-right: 10px;
+    font-size: 0.9em;
+    line-height: 1.5;
 }
 
+/* QUESTION + BUTTONS */
 .question {
     text-align: center;
     font-weight: bold;
-    margin: 20px 0 10px;
+    margin: 10px 0;
 }
 
 .buttons {
@@ -99,7 +99,7 @@ h1 {
 
 button {
     padding: 10px 22px;
-    margin: 8px;
+    margin: 6px;
     border: none;
     border-radius: 10px;
     font-size: 1em;
@@ -119,15 +119,14 @@ button {
 /* YES RESPONSE */
 #response {
     text-align: center;
-    margin-top: 10px;
     font-weight: bold;
     color: #ff4d6d;
 }
 
 #yesGif {
     display: none;
-    margin: 15px auto 0;
-    max-width: 260px;
+    max-width: 220px;
+    margin: 10px auto 0;
     border-radius: 12px;
 }
 </style>
@@ -147,46 +146,25 @@ button {
 <!-- PAGE 2 -->
 <div class="page" id="page2">
     <div class="card">
+
         <h1>Hi, my sweet bebi 💕</h1>
 
-        <p style="text-align:center;">
+        <p style="text-align:center; margin: 6px 0;">
             Surprise! You don't know how to ask me so I'll just do it for you. :P
         </p>
 
         <div class="message">
-            <p>
-                First off, I want to say sorry for the way I acted last night.
-                I was high on emotions and like you always say, my emotions are
-                clouding my judgement. I'm truly sorry because I was having mixed emotions.
-            </p>
+            <p>First off, I want to say sorry for the way I acted last night. I was high on emotions and like you always say, my emotions are clouding my judgement.</p>
 
-            <p>
-                At first, I was really really okay with you going home and that's
-                what I preferred but after some time I realized I wanted you to stay.
-                I couldn't decide and you also couldn't, and you forced me to make
-                the decision I was not sure about.
-            </p>
+            <p>At first, I was really okay with you going home, but later I realized I wanted you to stay. I couldn’t decide, and everything got mixed.</p>
 
-            <p>
-                All that put aside, I want you to know that I appreciate you so much —
-                for considering me in everything that you do, for your patience,
-                and for adjusting everything just to cater to my needs.
-            </p>
+            <p>I appreciate you so much — your patience, your effort, and how you always consider me.</p>
 
-            <p>
-                I love you so much and I'm really sorry for the things I say when
-                I'm upset or mad. I hope you never get tired of me and I'll try
-                to control my emotions more.
-            </p>
-
-            <p>
-                I also want you to feel that I love you so much and I'm willing
-                to adjust for you.
-            </p>
+            <p>I love you so much, and I’ll try to be better at handling my emotions. I want you to feel how much I love you and I’m willing to adjust for you.</p>
         </div>
 
         <p class="question">
-            Will you ask me to be <strong>your date</strong> ? (for my ego) 😆🌹
+            Will you ask me to be <strong>your date</strong>? (for my ego 😆🌹)
         </p>
 
         <div class="buttons">
@@ -194,8 +172,9 @@ button {
             <button id="noBtn">No 🙃</button>
         </div>
 
-        <p id="response"></p>
-        <img id="yesGif" src="deadpool.gif" alt="Deadpool GIF">
+        <div id="response"></div>
+        <img id="yesGif" src="deadpool.gif?v=1" alt="Deadpool GIF">
+
     </div>
 </div>
 
@@ -205,8 +184,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const page1 = document.getElementById("page1");
     const page2 = document.getElementById("page2");
     const noBtn = document.getElementById("noBtn");
-    const response = document.getElementById("response");
     const yesBtn = document.getElementById("yesBtn");
+    const response = document.getElementById("response");
     const yesGif = document.getElementById("yesGif");
 
     openBtn.addEventListener("click", () => {
@@ -215,8 +194,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     noBtn.addEventListener("mouseover", () => {
-        noBtn.style.left = Math.random() * 200 - 100 + "px";
-        noBtn.style.top  = Math.random() * 200 - 100 + "px";
+        noBtn.style.left = Math.random() * 150 - 75 + "px";
+        noBtn.style.top  = Math.random() * 80 - 40 + "px";
     });
 
     yesBtn.addEventListener("click", () => {
