@@ -18,7 +18,7 @@ body {
     align-items: center;
     font-family: Arial, sans-serif;
     touch-action: manipulation;
-    overflow: hidden; /* 🚫 no page scroll */
+    overflow: hidden;
 }
 
 /* COMMON */
@@ -60,10 +60,10 @@ body {
     z-index: 10;
 }
 
-/* PAGE 2 — CARD (NO SCROLL) */
+/* PAGE 2 — CARD */
 .card {
     background: white;
-    padding: 24px 30px;
+    padding: 22px 30px;
     border-radius: 18px;
     width: 85vw;
     max-width: 1000px;
@@ -86,11 +86,22 @@ h1 {
     line-height: 1.5;
 }
 
+/* CHIBI IMAGE */
+.chibi {
+    text-align: center;
+    margin: 8px 0;
+}
+
+.chibi img {
+    max-width: 140px;
+    border-radius: 12px;
+}
+
 /* QUESTION + BUTTONS */
 .question {
     text-align: center;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 6px 0;
 }
 
 .buttons {
@@ -126,7 +137,7 @@ button {
 #yesGif {
     display: none;
     max-width: 220px;
-    margin: 10px auto 0;
+    margin: 8px auto 0;
     border-radius: 12px;
 }
 </style>
@@ -161,6 +172,11 @@ button {
             <p>I appreciate you so much — your patience, your effort, and how you always consider me.</p>
 
             <p>I love you so much, and I’ll try to be better at handling my emotions. I want you to feel how much I love you and I’m willing to adjust for you.</p>
+        </div>
+
+        <!-- CHIBI IMAGE -->
+        <div class="chibi">
+            <img src="chibi.png" alt="Us as chibi 💕">
         </div>
 
         <p class="question">
